@@ -1,4 +1,4 @@
-        :root {
+:root {
             --primary: #6a1b9a;
             --secondary: #d81b60;
             --accent: #e8c441;
@@ -58,23 +58,27 @@
 
         /* --- Hero Section --- */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(143, 137, 137, 0.5)), url('../img/tokyo-visa-Immigration-Services.png') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
+    min-height: 80vh; /* Changed from height to min-height for safety */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(143, 137, 137, 0.5)), url('../img/tokyo-visa-Immigration-Services.png') center/cover;
+    display: flex;
+    flex-direction: column; /* This forces the stack */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px; /* Added some vertical padding */
+}
 
 .hero-content h2 {
     font-size: clamp(32px, 5vw, 60px);
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Reduced from 180px */
     font-weight: 800;
-    text-shadow:
-        0 0 8px rgba(219, 149, 43, 0.6),
-        0 4px 16px rgba(0,0,0,0.6);
+    text-shadow: 0 0 8px rgba(219, 149, 43, 0.6), 0 4px 16px rgba(0,0,0,0.6);
+}
+
+/* Add this to create a gap between the button and the stats */
+.hero-content {
+    margin-bottom: 50px; 
 }
 
         .btn-main {
@@ -440,5 +444,229 @@
         right: 20px;
         top: 50px;
     }
+}
+
+
+
+
+        :root {
+            --bg-blue: #2d5e9e;
+            --gold: #d4af37;
+            --dark-text: #4a321f;
+            --white-glow: rgba(255, 255, 255, 1);
+        }
+
+        .stats-container {
+    display: flex;
+    gap: 100px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2); /* Subtle dark overlay */
+    border-radius: 15px;
+    backdrop-filter: blur(2px); /* Modern glass effect */
+}
+
+        .stat-card {
+            position: relative;
+            width: 280px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color:  #e6dada;
+        }
+
+        /* The Gold Wreath and Crown */
+        .wreath-icon {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        /* Content Styling */
+        .content {
+            position: relative;
+            z-index: 2;
+            padding-top: 10px;
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .main-number {
+            font-size: 38px;
+            font-weight: 900;
+            margin: 0px 0;
+        }
+
+        .unit {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* The Dark Badge at the bottom */
+        .badge {
+            background-color: var(--dark-text);
+            color: #fff;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 2px;
+        }
+
+        /* Simple Crown SVG positioning */
+        .crown {
+            fill: var(--gold);
+            width: 80px;
+            margin: 0px 0px 100px 0px;
+        }
+
+        .wreath-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Keeps it perfectly centered */
+    width: 350px;  /* Set specific pixel size */
+    height: 350px; 
+    z-index: 2;
+    pointer-events: none;
+}
+
+        .testimonials-section {
+    padding: 80px 20px;
+    background: #f9fafc;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2933;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+}
+
+.client-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #d4af37;
+}
+
+.testimonial-card h4 {
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.testimonial-card span {
+    font-size: 14px;
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.testimonial-card p {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+
+.fees-section {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.fees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.fee-card {
+    background: #f9fafc;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.fee-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-6px);
+}
+
+.fee-card h3 {
+    font-size: 20px;
+    color: #1f2933;
+    margin-bottom: 12px;
+}
+
+.fee-card p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.fee-price {
+    border-top: 1px dashed #d1d5db;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fee-price span {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.fee-price strong {
+    font-size: 22px;
+    color: #d4af37;
+    font-weight: 700;
 }
 
