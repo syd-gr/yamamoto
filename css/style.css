@@ -486,6 +486,8 @@
             z-index: 1;
             opacity: 0.9;
             pointer-events: none;
+            display: block;
+    overflow: visible;
         }
 
         /* Content Styling */
@@ -534,10 +536,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Keeps it perfectly centered */
+    transform: translate(-50%, -50%) rotate(2deg);
     width: 350px;  /* Set specific pixel size */
     height: 350px; 
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
 }
 
